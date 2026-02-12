@@ -35,6 +35,61 @@ body {
     justify-content: center;
 }
 
+#game-message {
+    /* Posicionamiento */
+    margin: 20px auto;
+    min-height: 50px;
+    padding: 15px 25px;
+    width: fit-content;
+    max-width: 80%;
+    
+    /* Estilo Visual Retro */
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco casi opaco */
+    border: 4px solid #333; /* Borde grueso estilo cartucho */
+    border-radius: 10px;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    
+    /* Sombra para dar profundidad */
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.2);
+    
+    /* Centrado y visibilidad */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Animación de entrada */
+    transition: all 0.3s ease;
+}
+
+/* Colores dinámicos según el tipo de mensaje */
+#game-message.success {
+    border-color: #4caf50;
+    color: #2e7d32;
+    background-color: #e8f5e9;
+}
+
+#game-message.error {
+    border-color: #f44336;
+    color: #c62828;
+    background-color: #ffebee;
+}
+
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake-animation {
+    animation: shake 0.3s ease-in-out;
+}
+
 /* Zona Derecha (Sidebar) */
 #sidebar {
     width: 350px;

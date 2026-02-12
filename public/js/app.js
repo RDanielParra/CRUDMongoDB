@@ -220,7 +220,7 @@ async function toggleStatus(id) {
 
 // Liberar (DELETE)
 async function releasePokemon(id) {
-    if(!confirm("¿Estás seguro de liberar a este Pokémon? No podrás recuperarlo.")) return
+    if(!confirm("¿Estás seguro de liberar a este Pokémon? No podrás recuperarlo")) return
 
     try {
         await fetch(`${API_URL}/${id}`, { method: 'DELETE' })
