@@ -21,11 +21,11 @@ async function init() {
     await fetchMyPokemons()
     searchBtn.addEventListener('click', spawnWildPokemon)
     
-    setInterval(() => {
+    /*setInterval(() => {
         if (!currentWildPokemon && !document.querySelector('.modal:not(.hidden)')) {
             spawnWildPokemon();
         }
-    }, 15000)
+    }, 15000)*/
 }
 
 // --- 2. LÓGICA DE JUEGO  ---
