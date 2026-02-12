@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeManager</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="game-layout">
+        
+        <section id="wild-area">
+            <div class="message-log" id="game-message">¡Bienvenido entrenador!</div>
+            
+            <div id="scene-container">
+                <div id="pokemon-spawn"></div>
+                
+                <div id="pokeball-container" class="hidden">
+                    <div class="pokeball">
+                        <div class="pokeball-button"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="search-btn" class="action-btn">🌿 Buscar en la hierba</button>
+            </div>
+        </section>
+
+        <aside id="sidebar">
+            <div class="panel-header">
+                <h2>Mi Equipo (<span id="team-count">0</span>/5)</h2>
+            </div>
+            <div id="team-list" class="pokemon-grid">
+                </div>
+
+            <div class="panel-header">
+                <h2>Almacén PC</h2>
+            </div>
+            <div id="storage-list" class="pokemon-grid small-grid">
+                </div>
+        </aside>
+
+    </div>
+
+    <div id="capture-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>¡Lo atrapaste!</h3>
+            <div id="new-pokemon-info"></div>
+            <input type="text" id="nickname-input" placeholder="Ponle un apodo..." maxlength="12">
+            <div class="modal-buttons">
+                <button onclick="saveCaughtPokemon(true)" class="btn-team">Añadir al Equipo</button>
+                <button onclick="saveCaughtPokemon(false)" class="btn-storage">Guardar en PC</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
