@@ -16,6 +16,32 @@ const modal = document.getElementById('capture-modal')
 const nicknameInput = document.getElementById('nickname-input')
 const searchBtn = document.getElementById('search-btn')
 
+// --- LÓGICA DEL MENÚ MÓVIL (CORREGIDA) ---
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu-toggle')
+    const closeBtn = document.getElementById('close-sidebar')
+    const sidebar = document.getElementById('sidebar')
+
+    // Verificar si el botón existe antes de agregar el evento
+    if (menuBtn) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation() // Evita que el clic se vaya al juego
+            console.log("¡Clic en el botón de menú!") // Mensaje de prueba
+            sidebar.classList.add('active')
+        })
+    } else {
+        console.error("Error: No encuentro el botón con ID 'menu-toggle'")
+    }
+
+    // Botón de cerrar
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active')
+        })
+    }
+});
+
 // --- 1. INICIALIZACIÓN ---
 async function init() {
     await fetchMyPokemons()

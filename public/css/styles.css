@@ -213,3 +213,71 @@ body {
     width: 300px;
 }
 .modal-buttons button { margin: 5px; padding: 10px; cursor: pointer; }
+
+/* --- ESTILOS PARA MÓVILES (RESPONSIVE) --- */
+
+/* 1. Por defecto en PC, ocultamos los botones de abrir/cerrar */
+.mobile-only {
+    display: none;
+}
+
+/* 2. Reglas solo para pantallas menores a 768px (Celulares) */
+@media (max-width: 768px) {
+    
+    /* Mostrar los botones de control */
+    .mobile-only {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Cambiar el diseño a columna (uno encima de otro) */
+    .game-layout {
+        flex-direction: column; 
+    }
+
+    /* Estilo del Botón "Ver Mochila" */
+    #menu-toggle {
+        position: fixed; /* Flotante */
+        top: 15px;
+        right: 15px;
+        z-index: 50;
+        background: #ffeb3b; /* Amarillo Pokémon */
+        border: 2px solid #333;
+        padding: 10px 15px;
+        border-radius: 25px;
+        font-weight: bold;
+        box-shadow: 0 4px #fbc02d;
+    }
+
+    /* Estilo de la Barra Lateral (Ahora oculta a la derecha) */
+    #sidebar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        z-index: 1000;
+        transition: right 0.3s ease-in-out;
+        background-color: var(--sidebar-bg); /* Asegura que tenga color de fondo */
+        
+        /* ¡IMPORTANTE! Esto permite hacer scroll si hay muchos pokémons */
+        overflow-y: auto; 
+        padding-bottom: 50px; /* Espacio extra abajo para que no se corte */
+    }
+
+    /* Clase mágica: Cuando la agregamos, el menú entra */
+    #sidebar.active {
+        right: 0;
+    }
+
+    /* Botón cerrar dentro del menú */
+    #close-sidebar {
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+}
